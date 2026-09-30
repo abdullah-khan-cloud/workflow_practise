@@ -1,0 +1,13 @@
+---
+name: Exercise-1
+
+on: 
+    push:
+          branches:
+                 - main
+jobs:
+      learning:
+              runs-on: ubuntu-latest
+              steps:
+                - name: print msg
+                  run: echo "hello, how are you?"
