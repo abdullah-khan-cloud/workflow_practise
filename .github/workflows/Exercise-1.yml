@@ -2,13 +2,11 @@
 name: Exercise 2
 
 on: 
-    push:
-          branches:
-            - dev
+    pull_request:
         
 jobs: 
     learning:
         runs-on: ubuntu-latest
         steps:
          - name: ping google
-           run: echo "ping didnt work!!!!"
+           run: echo "pull request Detected!!"
