@@ -11,4 +11,4 @@ jobs:
         runs-on: ubuntu-latest
         steps:
          - name: ping google
-           run: ping -c 4 google.com
+           run: echo "ping didnt work!!!!"
