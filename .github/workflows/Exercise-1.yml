@@ -2,11 +2,11 @@
 name: Exercise 2
 
 on: 
-    pull_request:
+    workflow_dispatch:
         
 jobs: 
     learning:
         runs-on: ubuntu-latest
         steps:
-         - name: ping google
-           run: echo "pull request Detected!!"
+         - name: manual test
+           run: echo "Manual Worked!!!"
