@@ -4,11 +4,11 @@ name: Exercise 2
 on: 
     push:
           branches:
-            - main
+            - dev
         
 jobs: 
     learning:
         runs-on: ubuntu-latest
         steps:
-         - name: list env
-           run: printenv
+         - name: ping google
+           run: ping -c 4 google.com
