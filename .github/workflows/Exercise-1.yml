@@ -1,12 +1,12 @@
 ---
-name: Exercise 2
+name: Exercise-1
 
 on: 
-    pull_request:
-        
-jobs: 
-    learning:
-        runs-on: ubuntu-latest
-        steps:
-         - name: ping google
-           run: echo "pull request Detected!!"
+    workflow_dispatch:
+
+jobs:
+     learning:
+         runs-on: ubuntu-latest
+         steps:
+            - name: manual workflow
+              run: echo "My manual workflow is running!"
