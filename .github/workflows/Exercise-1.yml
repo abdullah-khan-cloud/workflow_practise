@@ -1,12 +1,12 @@
 ---
-name: Exercise 2
+name: Exercise-1
 
 on: 
     workflow_dispatch:
-        
-jobs: 
-    learning:
-        runs-on: ubuntu-latest
-        steps:
-         - name: manual test
-           run: echo "Manual Worked!!!"
+
+jobs:
+     learning:
+         runs-on: ubuntu-latest
+         steps:
+            - name: manual workflow
+            run: echo "My manual workflow is running!"
