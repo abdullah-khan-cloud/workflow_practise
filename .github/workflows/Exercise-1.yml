@@ -2,14 +2,12 @@
 name: Exercise-1
 
 on: 
-    push:
-         branches-ignore:
-                    - dev
+    pull_request:
 
 
 jobs:
      learning:
          runs-on: ubuntu-latest
          steps:
-            - name: branch ignore
-              run: echo "Branches Ignore!! worked"
+            - name: pull request
+              run: echo "pull request!! worked"
