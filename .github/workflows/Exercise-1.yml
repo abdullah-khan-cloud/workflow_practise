@@ -2,11 +2,14 @@
 name: Exercise-1
 
 on: 
-    workflow_dispatch:
+    push:
+         branches-ignore:
+                    - dev
+
 
 jobs:
      learning:
          runs-on: ubuntu-latest
          steps:
-            - name: manual workflow
-              run: echo "My manual workflow is running!"
+            - name: branch ignore
+              run: echo "Branches Ignore!! worked"
