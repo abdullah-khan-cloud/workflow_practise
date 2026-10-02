@@ -2,14 +2,11 @@
 name: Exercise-1
 
 on: 
-    pull_request:
-        branches: 
-              - test
-
+    workflow_dispatch:
 
 jobs:
      learning:
          runs-on: ubuntu-latest
          steps:
             - name: pull request
-              run: echo "pull request on certain branch!! worked"
+              run: echo "manual workflow run!! worked"
