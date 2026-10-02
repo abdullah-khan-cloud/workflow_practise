@@ -14,6 +14,9 @@ jobs:
         steps: 
             - run: echo "Job 2 Executed"
       deploy:
+          needs: 
+             - build
+             - test
           runs-on: ubuntu-latest
           steps: 
              - run: echo "Job 3 Executed!!"
