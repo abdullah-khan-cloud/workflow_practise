@@ -4,7 +4,12 @@ name: my workflow
 on:
     workflow_dispatch:
 jobs: 
-     push_condition:
+      building :
         runs-on: ubuntu-latest
         steps:
         - run: echo "Hello there"
+      test:
+        needs: building
+        runs-on: ubuntu-latest
+        steps: 
+          - run: echo "test successfull!!!"   
