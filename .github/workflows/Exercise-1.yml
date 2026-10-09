@@ -1,24 +1,10 @@
 ---
-name: needs practical
- 
-on: 
-    push
+name: my workflow
 
+on:
+    push:
 jobs: 
-    build:
+     push_condition:
         runs-on: ubuntu-latest
         steps:
-          - run: echo "job 1 Executed!!!"
-    test:
-        runs-on: ubuntu-latest
-        steps:
-          - run: echo "job 2 is executed!!"
-    deploy:
-        needs: [build,test]
-        runs-on: ubuntu-latest
-        steps:
-           - run: echo "sequential works!!"
-           - run: echo "hurrah!!!"
-        
-        
-
+        - run: echo "Hello there"
