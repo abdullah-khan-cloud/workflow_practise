@@ -2,7 +2,7 @@
 name: my workflow
 
 on:
-    push:
+    workflow_dispatch:
 jobs: 
      push_condition:
         runs-on: ubuntu-latest
