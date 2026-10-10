@@ -9,9 +9,6 @@ jobs:
       steps:
         - name: retrieving file into runner
           uses: actions/checkout@v4
-    display:
-      runs-on: ubuntu-latest
-      steps:
         - name: printing file content
           run: cat test.txt
         
