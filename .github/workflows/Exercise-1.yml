@@ -1,33 +1,35 @@
----
-name: learning_jobs
+name: multiple dependencies
 
 on: 
-   workflow_dispatch:
+   push:
 
 jobs:
-     build:
-      runs-on: ubuntu-latest
-      steps:
-        - name: create file
-          run: echo "Hello from build job" > message.txt
-        
-        - name: upload artifact
-          uses: actions/upload-artifact@v4
-          with: 
-             name: msg_artifact
-             path: message.txt
-      
-     test:
-       runs-on: ubuntu-latest
-       steps:
-        - name: Download Artifact
+   build:
+     runs-on: ubuntu-latest
+     steps:
+      - name: create a file
+        run: echo "Application ready" > app.txt
+      - name: upload artifact
+        uses: actions/upload-artifact@v4
+        with:
+           name: app-artifact
+           path: app.txt
+
+   security:
+     runs-on: ubuntu-latest
+     steps:
+      - run: echo "Security check passed"
+
+   deploy:
+     needs: [build,security]
+     runs-on: ubuntu-latest
+     steps:
+        - name: downloading artifact
           uses: actions/download-artifact@v5
           with:
-             name: msg_artifact
+             name: app-artifact
+        - name: display output
+          run: cat app.txt
+          
 
-        - name: print message
-          run: cat message.txt
 
-
-         
-           
