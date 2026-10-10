@@ -1,14 +1,18 @@
+---
 name: checkout practise
 
-on:
-    push:
+on: 
+   workflow_dispatch:
 
-jobs:
-    retrieve:
-      runs-on: ubuntu-latest
-      steps:
-        - name: retrieving file into runner
-          uses: actions/checkout@v4
-        - name: printing file content
-          run: cat test.txt
-        
+jobs: 
+   build:
+     runs-on: ubuntu-latest
+     steps:
+      - uses: actions/checkout@v4
+      - run: echo "Building Application"  
+
+   test:
+     runs-on: ubuntu-latest
+     steps:
+      - uses: actions/checkout@v4
+      - run: echo "Testing Application"
